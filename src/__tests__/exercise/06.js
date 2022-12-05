@@ -5,6 +5,7 @@ import * as React from 'react'
 import {render, screen, act} from '@testing-library/react'
 import Location from '../../examples/location'
 
+
 // 🐨 set window.navigator.geolocation to an object that has a getCurrentPosition mock function
 
 // 💰 I'm going to give you this handy utility function
@@ -26,6 +27,12 @@ function deferred() {
 // // assert on the resolved state
 
 test('displays the users current location', async () => {
+  const fakePosition = {
+    coords: {
+      latitude: 0.3232,
+      longitude: 22
+    }
+  };
   // 🐨 create a fakePosition object that has an object called "coords" with latitude and longitude
   // 📜 https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition
   //
